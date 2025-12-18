@@ -8,7 +8,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "Saro Company - Bienes Raíces de Lujo",
+    title: "INMOBILIARA SARO - Bienes Raíces de Lujo",
     description: "Encuentra tu propiedad ideal con Sora Company. Casas y terrenos de alta calidad en las mejores ubicaciones.",
     keywords: ["bienes raíces", "casas", "terrenos", "propiedades", "inmobiliaria"],
     authors: [{ name: "AL Development" }],

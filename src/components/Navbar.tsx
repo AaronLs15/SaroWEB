@@ -20,7 +20,7 @@ export default function Navbar() {
                     {/* Logo */}
                     <Link href="/" className="flex items-center space-x-2">
                         <Home className="h-8 w-8 text-primary-600" />
-                        <span className="text-xl font-bold text-gray-900">Saro Company</span>
+                        <span className="text-xl font-bold text-gray-900">INMOBILIARA SARO</span>
                     </Link>
 
                     {/* Desktop Navigation */}
