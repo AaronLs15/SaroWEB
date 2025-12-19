@@ -38,7 +38,7 @@ export default function ServicesSection() {
                         Nuestros Servicios
                     </span>
                     <h2 className="mt-4 text-4xl font-bold text-gray-900 lg:text-5xl">
-                        ¿Por Qué Elegir INMOBILIARA SARO?
+                        ¿Por Qué Elegir INMOBILIARIA SARO?
                     </h2>
                     <p className="mt-4 text-lg text-gray-600">
                         Ofrecemos un servicio integral que va más allá de solo mostrar propiedades.

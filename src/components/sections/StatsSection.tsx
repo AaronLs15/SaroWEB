@@ -25,7 +25,7 @@ const stats = [
     },
     {
         icon: Trophy,
-        value: 15,
+        value: 37,
         suffix: '+',
         label: 'Años de Experiencia',
     },

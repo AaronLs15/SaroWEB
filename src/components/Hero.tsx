@@ -75,7 +75,7 @@ export default function Hero() {
                     {/* Main heading */}
                     <h1 className="hero-title mb-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
                         Encuentra el Hogar de tus Sueños con{' '}
-                        <span className="text-primary-200">INMOBILIARA SARO</span>
+                        <span className="text-primary-200">INMOBILIARIA SARO</span>
                     </h1>
 
                     <p className="hero-subtitle mb-10 text-lg text-gray-100 sm:text-xl">

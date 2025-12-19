@@ -44,15 +44,15 @@ export default function Footer() {
                         <ul className="space-y-3 text-sm">
                             <li className="flex items-start space-x-3">
                                 <MapPin className="h-5 w-5 flex-shrink-0 text-primary-400" />
-                                <span>Santiago, NL</span>
+                                <span>Isaac Garza 1129, Centro de MTY</span>
                             </li>
                             <li className="flex items-center space-x-3">
                                 <Phone className="h-5 w-5 flex-shrink-0 text-primary-400" />
-                                <span>+52 1 81 2014 1491</span>
+                                <span>+52 818 287 6553</span>
                             </li>
                             <li className="flex items-center space-x-3">
                                 <Mail className="h-5 w-5 flex-shrink-0 text-primary-400" />
-                                <span>saroinmuebles01@gmail.com</span>
+                                <span>saroinmuebles@gmail.com</span>
                             </li>
                         </ul>
                     </div>

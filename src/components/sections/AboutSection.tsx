@@ -15,7 +15,7 @@ export default function AboutSection() {
                     <div className="about-content relative h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
                         <Image
                             src="/images/about-building.jpg"
-                            alt="INMOBILIARA SARO"
+                            alt="INMOBILIARIA SARO"
                             fill
                             className="object-cover"
                         />
@@ -35,7 +35,7 @@ export default function AboutSection() {
                         </h2>
 
                         <p className="text-lg text-gray-600 leading-relaxed">
-                            En INMOBILIARA SARO, nos especializamos en conectar a las personas con las propiedades
+                            En INMOBILIARIA SARO, nos especializamos en conectar a las personas con las propiedades
                             de sus sueños. Con años de experiencia en el mercado inmobiliario, ofrecemos un
                             servicio personalizado y profesional que garantiza resultados excepcionales.
                         </p>
@@ -72,7 +72,7 @@ export default function AboutSection() {
                                     <Award className="h-6 w-6 text-primary-600" />
                                 </div>
                                 <div>
-                                    <p className="text-2xl font-bold text-gray-900">15+</p>
+                                    <p className="text-2xl font-bold text-gray-900">37+</p>
                                     <p className="text-sm text-gray-600">Años de Experiencia</p>
                                 </div>
                             </div>

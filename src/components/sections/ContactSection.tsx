@@ -39,7 +39,7 @@ export default function ContactSection() {
                                     </div>
                                     <div>
                                         <p className="font-semibold text-gray-900">Dirección</p>
-                                        <p className="mt-1 text-gray-600">Santiago, NL</p>
+                                        <p className="mt-1 text-gray-600">Isaac Garza 1129, Centro de MTY</p>
                                     </div>
                                 </div>
 
@@ -49,7 +49,7 @@ export default function ContactSection() {
                                     </div>
                                     <div>
                                         <p className="font-semibold text-gray-900">Teléfono</p>
-                                        <p className="mt-1 text-gray-600">+52 1 81 2014 1491</p>
+                                        <p className="mt-1 text-gray-600">+52 818 287 6553</p>
                                     </div>
                                 </div>
 
@@ -59,7 +59,7 @@ export default function ContactSection() {
                                     </div>
                                     <div>
                                         <p className="font-semibold text-gray-900">Email</p>
-                                        <p className="mt-1 text-gray-600">saroinmuebles01@gmail.com</p>
+                                        <p className="mt-1 text-gray-600">saroinmuebles@gmail.com</p>
                                     </div>
                                 </div>
 
