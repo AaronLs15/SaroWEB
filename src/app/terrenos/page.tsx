@@ -79,18 +79,18 @@ export default function TerrenosPage() {
 
             <div className="container-custom py-12">
                 {/* Count */}
-                <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div className="mb-8 space-y-4">
                     <p className="text-sm text-gray-600">
                         {loading ? 'Cargando...' : `${terrenos.length} ${terrenos.length === 1 ? 'terreno encontrado' : 'terrenos encontrados'}`}
                     </p>
 
-                    <div className="flex flex-wrap items-center gap-4">
+                    <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:items-center sm:gap-4">
                         <div className="flex items-center space-x-2">
-                            <SlidersHorizontal className="h-5 w-5 text-gray-600" />
+                            <SlidersHorizontal className="h-5 w-5 text-gray-600 hidden sm:block" />
                             <select
                                 value={filters.price}
                                 onChange={(e) => setFilters({ ...filters, price: e.target.value })}
-                                className="rounded-lg border border-gray-300 px-4 py-2 text-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                                className="w-full rounded-lg border border-gray-300 bg-white px-3 py-3 text-base focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500 sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
                             >
                                 <option value="all">Todos los precios</option>
                                 <option value="low">Hasta $1,000,000</option>
@@ -102,7 +102,7 @@ export default function TerrenosPage() {
                         <select
                             value={filters.surface}
                             onChange={(e) => setFilters({ ...filters, surface: e.target.value })}
-                            className="rounded-lg border border-gray-300 px-4 py-2 text-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                            className="w-full rounded-lg border border-gray-300 bg-white px-3 py-3 text-base focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500 sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
                         >
                             <option value="all">Superficie (Todas)</option>
                             <option value="small">Hasta 200 m²</option>

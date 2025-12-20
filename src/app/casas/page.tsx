@@ -83,18 +83,18 @@ export default function CasasPage() {
 
             <div className="container-custom py-12">
                 {/* Filters */}
-                <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                <div className="mb-8 space-y-4">
                     <p className="text-sm text-gray-600">
                         {loading ? 'Cargando...' : `${casas.length} ${casas.length === 1 ? 'propiedad encontrada' : 'propiedades encontradas'}`}
                     </p>
 
-                    <div className="flex flex-wrap items-center gap-4">
-                        <div className="flex items-center space-x-2">
-                            <SlidersHorizontal className="h-5 w-5 text-gray-600" />
+                    <div className="grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:items-center sm:gap-4">
+                        <div className="col-span-2 flex items-center space-x-2 sm:col-span-1">
+                            <SlidersHorizontal className="h-5 w-5 text-gray-600 hidden sm:block" />
                             <select
                                 value={filters.price}
                                 onChange={(e) => setFilters({ ...filters, price: e.target.value })}
-                                className="rounded-lg border border-gray-300 px-4 py-2 text-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                                className="w-full rounded-lg border border-gray-300 bg-white px-3 py-3 text-base focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500 sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
                             >
                                 <option value="all">Todos los precios</option>
                                 <option value="low">Hasta $5,000,000</option>
@@ -106,7 +106,7 @@ export default function CasasPage() {
                         <select
                             value={filters.recamaras}
                             onChange={(e) => setFilters({ ...filters, recamaras: e.target.value })}
-                            className="rounded-lg border border-gray-300 px-4 py-2 text-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                            className="w-full rounded-lg border border-gray-300 bg-white px-3 py-3 text-base focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500 sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
                         >
                             <option value="any">Recámaras (Todas)</option>
                             <option value="1">1+</option>
@@ -118,7 +118,7 @@ export default function CasasPage() {
                         <select
                             value={filters.banos}
                             onChange={(e) => setFilters({ ...filters, banos: e.target.value })}
-                            className="rounded-lg border border-gray-300 px-4 py-2 text-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                            className="w-full rounded-lg border border-gray-300 bg-white px-3 py-3 text-base focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500 sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
                         >
                             <option value="any">Baños (Todos)</option>
                             <option value="1">1+</option>
@@ -129,7 +129,7 @@ export default function CasasPage() {
                         <select
                             value={filters.estacionamientos}
                             onChange={(e) => setFilters({ ...filters, estacionamientos: e.target.value })}
-                            className="rounded-lg border border-gray-300 px-4 py-2 text-sm focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500"
+                            className="col-span-2 w-full rounded-lg border border-gray-300 bg-white px-3 py-3 text-base focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500 sm:w-auto sm:px-4 sm:py-2 sm:text-sm"
                         >
                             <option value="any">Estacionamientos (Todos)</option>
                             <option value="1">1+</option>

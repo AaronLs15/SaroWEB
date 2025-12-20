@@ -26,14 +26,19 @@ const services = [
     },
 ];
 
+
+
 export default function ServicesSection() {
-    useStaggerAnimation('.service-card', {});
+    useStaggerAnimation('.service-card', {
+        trigger: '#services-section',
+        start: 'top 150%', // Se activa mucho antes de entrar en pantalla para asegurar que ya estén visibles
+    });
 
     return (
-        <section className="py-20 bg-gray-50">
+        <section id="services-section" className="py-20 bg-gray-50">
             <div className="container-custom">
                 {/* Header */}
-                <div className="mx-auto max-w-2xl text-center mb-16">
+                <div className="services-header mx-auto max-w-2xl text-center mb-16">
                     <span className="text-sm font-semibold text-primary-600 uppercase tracking-wider">
                         Nuestros Servicios
                     </span>
