@@ -65,7 +65,7 @@ export default function TerrenosPage() {
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Header */}
-            <div className="bg-gradient-to-r from-green-600 to-green-700 py-12 text-white">
+            <div className="bg-gradient-to-r from-green-600 to-green-700 pt-20 pb-12 text-white">
                 <div className="container-custom">
                     <div className="flex items-center space-x-3">
                         <Trees className="h-8 w-8" />

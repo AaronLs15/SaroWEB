@@ -33,7 +33,6 @@ export function usePageView() {
                 if (!existingView && !selectError) {
                     const { error: insertError } = await supabase.from('page_views').insert({
                         path: pathname,
-                        user_id: session?.user?.id || null,
                         anonymous_id: anonymousId,
                         ua: navigator.userAgent,
                     });

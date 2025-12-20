@@ -69,7 +69,7 @@ export default function CasasPage() {
     return (
         <div className="min-h-screen bg-gray-50">
             {/* Header */}
-            <div className="bg-primary-600 py-12 text-white">
+            <div className="bg-primary-600 pt-20 pb-12 text-white">
                 <div className="container-custom">
                     <div className="flex items-center space-x-3">
                         <Home className="h-8 w-8" />

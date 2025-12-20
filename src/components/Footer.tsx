@@ -10,7 +10,7 @@ export default function Footer() {
                 <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
                     {/* About */}
                     <div>
-                        <h3 className="mb-4 text-lg font-semibold text-white">Sora Company</h3>
+                        <h3 className="mb-4 text-lg font-semibold text-white">INMOBILIARIA SARO</h3>
                         <p className="text-sm">
                             Tu socio de confianza en bienes raíces. Encuentra la propiedad de tus sueños con nosotros.
                         </p>

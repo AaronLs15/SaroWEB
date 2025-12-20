@@ -28,16 +28,16 @@ export function useFadeIn(selector: string, options = {}) {
         elements.forEach((element: any) => {
             gsap.fromTo(
                 element,
-                { opacity: 0, y: 50 },
+                { opacity: 0, y: 30 },
                 {
                     opacity: 1,
                     y: 0,
-                    duration: 1,
-                    ease: 'power3.out',
+                    duration: 0.6,
+                    ease: 'power2.out',
                     scrollTrigger: {
                         trigger: element,
-                        start: 'top 80%',
-                        end: 'top 50%',
+                        start: 'top 95%',
+                        end: 'top 70%',
                         toggleActions: 'play none none none',
                         ...options,
                     },
@@ -62,16 +62,16 @@ export function useStaggerAnimation(selector: string, options = {}) {
 
         gsap.fromTo(
             elements,
-            { opacity: 0, y: 30 },
+            { opacity: 0, y: 20 },
             {
                 opacity: 1,
                 y: 0,
-                duration: 0.8,
-                stagger: 0.2,
-                ease: 'power3.out',
+                duration: 0.5,
+                stagger: 0.1,
+                ease: 'power2.out',
                 scrollTrigger: {
                     trigger: elements[0] as gsap.DOMTarget,
-                    start: 'top 80%',
+                    start: 'top 95%',
                     toggleActions: 'play none none none',
                     ...options,
                 },
@@ -99,3 +99,4 @@ export function animateCounter(element: HTMLElement, endValue: number, duration 
         },
     });
 }
+
