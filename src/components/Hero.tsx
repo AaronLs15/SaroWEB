@@ -45,7 +45,7 @@ export default function Hero() {
                     className="absolute inset-0 h-full w-full object-cover"
                     poster="/images/hero-poster.jpg"
                 >
-                    <source src="/videos/hero-background.webm" type="video/mp4" />
+                    <source src="/videos/hero-background.webm" type="video/webm" />
                     {/* Fallback gradient if video doesn't load */}
                 </video>
 
