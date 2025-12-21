@@ -1,12 +1,21 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { gsap } from 'gsap';
 import { ArrowRight, Sparkles } from 'lucide-react';
 
 export default function Hero() {
+    const videoRef = useRef<HTMLVideoElement>(null);
+
     useEffect(() => {
+        // Force video play for mobile browsers
+        if (videoRef.current) {
+            videoRef.current.play().catch(error => {
+                console.log("Video autoplay failed:", error);
+            });
+        }
+
         // Animate hero content
         gsap.fromTo(
             '.hero-badge',
@@ -38,6 +47,7 @@ export default function Hero() {
             {/* Video Background */}
             <div className="absolute inset-0 z-0">
                 <video
+                    ref={videoRef}
                     autoPlay
                     loop
                     muted
