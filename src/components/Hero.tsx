@@ -45,7 +45,7 @@ export default function Hero() {
                     className="absolute inset-0 h-full w-full object-cover"
                     poster="/images/hero-poster.jpg"
                 >
-                    <source src="/videos/hero-background.mp4" type="video/mp4" />
+                    <source src="/videos/hero-background.webm" type="video/mp4" />
                     {/* Fallback gradient if video doesn't load */}
                 </video>
 
@@ -53,7 +53,7 @@ export default function Hero() {
                 <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-primary-900/70" />
             </div>
 
-            {/* Animated background pattern */}
+            {/* Animated background pattern 
             <div className="absolute inset-0 z-10 opacity-10">
                 <div
                     className="absolute inset-0"
@@ -61,7 +61,7 @@ export default function Hero() {
                         backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
                     }}
                 />
-            </div>
+            </div>*/}
 
             {/* Content */}
             <div className="container-custom relative z-20 text-white">
@@ -74,8 +74,8 @@ export default function Hero() {
 
                     {/* Main heading */}
                     <h1 className="hero-title mb-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
-                        Encuentra el Hogar de tus Sueños con{' '}
-                        <span className="text-primary-200">INMOBILIARIA SARO</span>
+                        Encuentra la propiedad de tus sueños con{' '}
+                        <span className="text-primary-200">Inmobiliaria Saro</span>
                     </h1>
 
                     <p className="hero-subtitle mb-10 text-lg text-gray-100 sm:text-xl">

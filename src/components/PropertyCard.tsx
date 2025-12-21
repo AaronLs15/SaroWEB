@@ -2,7 +2,9 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Casa, Terreno, CasaImagen, TerrenoImagen } from '@/types/database';
 import { formatCurrency } from '@/lib/utils';
-import { Bed, Bath, Car, Maximize, MapPin } from 'lucide-react';
+import { Bed, Bath, Car, Maximize, MapPin, Play, Video } from 'lucide-react';
+import { isVideo } from '@/lib/videoUtils';
+import { useState, useRef } from 'react';
 
 type PropertyCardProps = {
     property: Casa | Terreno;
@@ -11,27 +13,83 @@ type PropertyCardProps = {
 };
 
 export default function PropertyCard({ property, type, images }: PropertyCardProps) {
-    const firstImage = images && images.length > 0
-        ? images[0].url
-        : '/placeholder-property.jpg';
+    const [isHovered, setIsHovered] = useState(false);
+    const videoRef = useRef<HTMLVideoElement>(null);
+
+    // Identify resources
+    // Prioritize showing an actual image as the cover, even if it's not the first item
+    const coverImage = images?.find(img => !isVideo(img.url))?.url;
+    // If no images exist (only video), we don't have a cover image string
+    const displayImage = coverImage || '/placeholder-property.jpg';
+
+    // Find the first video if available
+    const videoUrl = images?.find(img => isVideo(img.url))?.url;
+
+    // If we only have a video and no regular images, we must show the video element always (paused by default)
+    const onlyVideo = !coverImage && !!videoUrl;
+
+    // Handle video playback on hover
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+        if (videoUrl && videoRef.current) {
+            videoRef.current.play().catch(e => console.log('Video autoplay prevented:', e));
+        }
+    };
+
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+        if (videoUrl && videoRef.current) {
+            videoRef.current.pause();
+            videoRef.current.currentTime = 0;
+        }
+    };
 
     return (
         <Link
             href={`/${type === 'casa' ? 'casas' : 'terrenos'}/${property.slug}`}
             className="card group overflow-hidden"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
         >
-            {/* Image */}
+            {/* Image & Video */}
             <div className="relative h-56 overflow-hidden bg-gray-200">
-                <Image
-                    src={firstImage}
-                    alt={property.titulo}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-110"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                />
-                <div className="absolute right-3 top-3 rounded-full bg-primary-600 px-3 py-1 text-xs font-semibold text-white shadow-lg">
-                    {type === 'casa' ? 'Casa' : 'Terreno'}
+                {/* Show Image if we have one (and hide it if hovering over a video, unless it's only video mode) */}
+                {!onlyVideo && (
+                    <Image
+                        src={displayImage}
+                        alt={property.titulo}
+                        fill
+                        className={`object-cover transition-transform duration-300 group-hover:scale-110 ${isHovered && videoUrl ? 'opacity-0' : 'opacity-100'}`}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                )}
+
+                {/* Video Element (Hidden by default, shown on hover if available, or always if only video) */}
+                {videoUrl && (
+                    <video
+                        ref={videoRef}
+                        src={videoUrl}
+                        className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-300 ${isHovered || onlyVideo ? 'opacity-100' : 'opacity-0'}`}
+                        muted
+                        loop
+                        playsInline
+                    />
+                )}
+
+
+                {/* Badges */}
+                <div className="absolute right-3 top-3 flex gap-2">
+                    {/* Video Indicator (Mobile/List view) */}
+                    {videoUrl && (
+                        <div className="rounded-full bg-black/50 p-1.5 text-white backdrop-blur-sm">
+                            <Video className="h-3 w-3" />
+                        </div>
+                    )}
+                    <div className="rounded-full bg-primary-600 px-3 py-1 text-xs font-semibold text-white shadow-lg">
+                        {type === 'casa' ? 'Casa' : 'Terreno'}
+                    </div>
                 </div>
+
                 {property.es_destacado && (
                     <div className="absolute left-3 top-3 rounded-full bg-yellow-500 px-3 py-1 text-xs font-semibold text-white shadow-lg">
                         Destacado

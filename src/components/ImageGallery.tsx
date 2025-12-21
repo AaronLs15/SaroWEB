@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Play, Video } from 'lucide-react';
+import { isVideo } from '@/lib/videoUtils';
 
 type ImageGalleryProps = {
     images: Array<{ url: string; alt: string | null }>;
@@ -31,14 +32,23 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
         <div className="space-y-4">
             {/* Main image */}
             <div className="relative h-96 overflow-hidden rounded-xl bg-gray-200 lg:h-[500px]">
-                <Image
-                    src={images[currentIndex].url}
-                    alt={images[currentIndex].alt || 'Imagen de propiedad'}
-                    fill
-                    className="object-cover"
-                    priority
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                />
+                {isVideo(images[currentIndex].url) ? (
+                    <video
+                        src={images[currentIndex].url}
+                        className="h-full w-full object-contain bg-black"
+                        controls
+                        playsInline
+                    />
+                ) : (
+                    <Image
+                        src={images[currentIndex].url}
+                        alt={images[currentIndex].alt || 'Imagen de propiedad'}
+                        fill
+                        className="object-cover"
+                        priority
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                    />
+                )}
 
                 {/* Navigation arrows */}
                 {images.length > 1 && (
@@ -76,17 +86,30 @@ export default function ImageGallery({ images }: ImageGalleryProps) {
                             key={index}
                             onClick={() => setCurrentIndex(index)}
                             className={`relative h-20 overflow-hidden rounded-lg transition-all ${index === currentIndex
-                                    ? 'ring-4 ring-primary-500'
-                                    : 'opacity-70 hover:opacity-100'
+                                ? 'ring-4 ring-primary-500'
+                                : 'opacity-70 hover:opacity-100'
                                 }`}
                         >
-                            <Image
-                                src={image.url}
-                                alt={image.alt || `Thumbnail ${index + 1}`}
-                                fill
-                                className="object-cover"
-                                sizes="(max-width: 640px) 25vw, (max-width: 1024px) 16vw, 12vw"
-                            />
+
+                            {isVideo(image.url) ? (
+                                <div className="relative h-full w-full bg-gray-900 flex items-center justify-center">
+                                    <video
+                                        src={image.url}
+                                        className="h-full w-full object-cover opacity-60"
+                                        preload="metadata"
+                                        muted
+                                    />
+                                    <Play className="absolute h-8 w-8 text-white/90" fill="currentColor" />
+                                </div>
+                            ) : (
+                                <Image
+                                    src={image.url}
+                                    alt={image.alt || `Thumbnail ${index + 1}`}
+                                    fill
+                                    className="object-cover"
+                                    sizes="(max-width: 640px) 25vw, (max-width: 1024px) 16vw, 12vw"
+                                />
+                            )}
                         </button>
                     ))}
                 </div>
