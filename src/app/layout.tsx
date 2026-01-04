@@ -9,12 +9,12 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "INMOBILIARIA SARO - Bienes Raíces de Lujo",
-    description: "Encuentra tu propiedad ideal con Sora Company. Casas y terrenos de alta calidad en las mejores ubicaciones.",
+    description: "Encuentra tu propiedad ideal con Saro Inmobiliaria. Casas y terrenos de alta calidad en las mejores ubicaciones.",
     keywords: ["bienes raíces", "casas", "terrenos", "propiedades", "inmobiliaria"],
     authors: [{ name: "AL Development" }],
     openGraph: {
-        title: "Sora Company - Bienes Raíces de Lujo",
-        description: "Encuentra tu propiedad ideal con Sora Company",
+        title: "Saro Inmobiliaria - Bienes Raíces de Lujo",
+        description: "Encuentra tu propiedad ideal con Saro Inmobiliaria",
         type: "website",
     },
 };
